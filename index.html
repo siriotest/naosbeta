@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuto nella chat Sirio</title>
+    <style>
+        #mostraIframeImage {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 100px; /* Imposta la larghezza desiderata */
+            height: 40px; /* Imposta l'altezza desiderata */
+            cursor: pointer; /* Mostra il cursore come un puntatore quando passi sopra l'immagine */
+            z-index: 9999; /* Assicura che l'immagine sia sopra tutti gli altri elementi */
+            background-image: url('sirio_col.png'); /* Imposta l'immagine di sfondo */
+            background-size: contain; /* Adatta l'immagine per coprire completamente il contenitore */
+            background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+            background-position: center; /* Centra l'immagine all'interno del contenitore */
+            overflow: hidden; /* Nasconde il contenuto testuale eccedente */
+            text-indent: -9999px; /* Posiziona il testo al di fuori dell'area visibile */
+        }
+
+        #iframeContainer {
+            display: none; /* Nascondi l'iframe all'inizio */
+            position: fixed;
+            top: 93%;
+            left: 85%;
+            right: 200%;
+            bottom: 100%;
+            transform: translate(-5%, -50%);
+            width: 300px; /* Imposta la larghezza iniziale */
+            height: 200px; /* Imposta l'altezza iniziale */
+            z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+        }
+
+        #iframeContainer.expanded {
+            display:  block;
+            position: fixed;
+            width: 200%; /* Imposta la larghezza espansa */
+            height: 200%; /* Imposta l'altezza espansa */
+            max-width: 200px; /* Imposta la larghezza massima */
+            max-height: 800px; /* Imposta l'altezza massima */
+        }
+        
+        h1 {
+    text-align: center; /* Centra il testo del titolo */
+    font-family: 'Work Sans', normal; /* Modifica il tipo di carattere */
+    color: #333; /* Cambia il colore del testo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiungi un'ombra al testo */
+    margin-top: 50px; /* Aggiungi un margine superiore per lo spazio */
+
+@media only screen and (max-width: 3200px) {
+    #iframeContainer {
+        display: none; /* Nascondi l'iframe all'inizio */
+        position: fixed;
+        top: 93%;
+        left: 90%;
+        right: 200%;
+        bottom: 100%;
+        transform: translate(-5%, -50%);
+        width: 300px; /* Imposta la larghezza iniziale */
+        height: 200px; /* Imposta l'altezza iniziale */
+        z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+        
+    }
+    #iframeContainer.expanded {
+        display:  block;
+        position: fixed;
+        width: 200%; /* Imposta la larghezza espansa */
+        height: 200%; /* Imposta l'altezza espansa */
+        max-width: 200px; /* Imposta la larghezza massima */
+        max-height: 800px; /* Imposta l'altezza massima */
+    }
+    .AleClass{
+        height:50%;  
+        min-height: 300px;
+    }
+    
+}
+@media only screen and (max-width: 2600px) {
+    #iframeContainer {
+        display: none; /* Nascondi l'iframe all'inizio */
+        position: fixed;
+        top: 93%;
+        left: 87%;
+        right: 200%;
+        bottom: 100%;
+        transform: translate(-5%, -50%);
+        width: 300px; /* Imposta la larghezza iniziale */
+        height: 200px; /* Imposta l'altezza iniziale */
+        z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+        
+    }
+    #iframeContainer.expanded {
+        display:  block;
+        position: fixed;
+        width: 200%; /* Imposta la larghezza espansa */
+        height: 200%; /* Imposta l'altezza espansa */
+        max-width: 200px; /* Imposta la larghezza massima */
+        max-height: 800px; /* Imposta l'altezza massima */
+    }
+    .AleClass{
+        height:50%;  
+        min-height: 300px;
+    }
+    
+}
+
+
+
+@media only screen and (max-width: 1920px) {
+    #iframeContainer {
+        display: none; /* Nascondi l'iframe all'inizio */
+        position: fixed;
+        top: 93%;
+        left: 80%;
+        right: 200%;
+        bottom: 100%;
+        transform: translate(-5%, -50%);
+        width: 300px; /* Imposta la larghezza iniziale */
+        height: 200px; /* Imposta l'altezza iniziale */
+        z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+    }
+    .AleClass{
+        height:50%;  
+        min-height: 300px;
+    }
+    
+}
+
+@media only screen and (max-width: 1250px) {
+    #iframeContainer {
+        display: none; /* Nascondi l'iframe all'inizio */
+        position: fixed;
+        top: 93%;
+        left: 70%;
+        right: 200%;
+        bottom: 100%;
+        transform: translate(-5%, -50%);
+        width: 300px; /* Imposta la larghezza iniziale */
+        height: 200px; /* Imposta l'altezza iniziale */
+        z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+    }
+    .AleClass{
+        height:50%;  
+        min-height: 300px;
+    }
+    
+}
+@media only screen and (max-width: 768px) {
+    #iframeContainer {
+        display: none; /* Nascondi l'iframe all'inizio */
+        position: fixed;
+        top: 93%;
+        left: 58%;
+        right: 200%;
+        bottom: 100%;
+        transform: translate(-5%, -50%);
+        width: 300px; /* Imposta la larghezza iniziale */
+        height: 200px; /* Imposta l'altezza iniziale */
+        z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+    }
+    .AleClass{
+        height:50%;  
+        min-height: 300px;
+    }
+    
+}
+
+
+@media only screen and (max-width: 576px) {
+    #iframeContainer {
+        display: none; /* Nascondi l'iframe all'inizio */
+        position: fixed;
+        top: 93%;
+        left: 35%;
+        right: 200%;
+        bottom: 100%;
+        transform: translate(-5%, -50%);
+        width: 300px; /* Imposta la larghezza iniziale */
+        height: 200px; /* Imposta l'altezza iniziale */
+        z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+    }
+    .AleClass{
+        height:50%;  
+        min-height: 300px;
+    }
+    
+}
+@media only screen and (max-width: 414px) {
+    #iframeContainer {
+        display: none; /* Nascondi l'iframe all'inizio */
+        position: fixed;
+        top: 93%;
+        left: 10%;
+        right: 180%;
+        bottom: 100%;
+        transform: translate(-5%, -50%);
+        width: 300px; /* Imposta la larghezza iniziale */
+        height: 200px; /* Imposta l'altezza iniziale */
+        z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+    }
+    .AleClass{
+        height:50%;  
+        min-height: 300px;
+    }
+    
+}
+
+    </style>
+</head>
+<body>
+
+    <h1> <img src = 'sidea_logo3.png' width="70" height="70"> </h1>
+    
+    <div id="mostraIframeImage" onclick="toggleIframe()">Mostra Iframe</div>
+    
+    <div id="iframeContainer">
+        <iframe class="AleClass" src='https://app.zipchat.ai/iframe/?widget_token=XOHjgEL2QVvpd28hn2vD' style='' frameborder='0'></iframe>
+    </div>
+
+    <script>
+        window.onload = function (){
+            resetIframe();
+        }
+        var isIframeVisible = false;
+    
+        function toggleIframe() {
+            var iframeContainer = document.getElementById("iframeContainer");
+    
+            if (isIframeVisible) {
+                iframeContainer.classList.remove("expanded");
+                resetIframe(); // Rimuovi la classe "expanded"
+            } else {
+                iframeContainer.classList.add("expanded"); // Aggiungi la classe "expanded"
+            }
+    
+            isIframeVisible = !isIframeVisible;
+        }
+    
+        function resetIframe() {
+            var iframeContainer = document.getElementById("iframeContainer");
+            var iframe = iframeContainer.querySelector("iframe");
+            var iframeSrc = 'https://app.zipchat.ai/iframe/?widget_token=XOHjgEL2QVvpd28hn2vD'; 
+            var cacheBuster = "&_=" + new Date().getTime(); // Genera un timestamp per invalidare la cache
+            iframe.src = iframeSrc + cacheBuster; // Aggiungi il timestamp come query parameter per forzare il refresh
+        }
+    </script>
+</body>
+</html>
