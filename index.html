@@ -102,6 +102,28 @@
     }
     
 }
+@media only screen and (max-width: 1780px) {
+    #iframeContainer {
+        display: none; /* Nascondi l'iframe all'inizio */
+        position: fixed;
+        top: 86%;
+        left: 78%;
+        right: 200%;
+        bottom: 100%;
+        transform: translate(-5%, -50%);
+        max-width: 500px; /* Imposta la larghezza iniziale */
+        max-height: 700px; /* Imposta l'altezza iniziale */
+        z-index: 9998; /* Assicura che l'iframe sia sopra tutti gli altri elementi tranne l'immagine */
+    }
+    .AleClass{
+        height:100%;  
+        max-height: 400px;
+		width:100%;
+		min-width: 400px;
+    }
+    
+}
+
 
 @media only screen and (max-width: 1750px) {
     #iframeContainer {
